@@ -2,7 +2,7 @@
 # include <stdio.h>
 
 int main(){
-    int n, i, sum, counter;
+    int n, i;
     infotype popd1, popd2, trash;
     Stack st;
     char c;
@@ -11,47 +11,51 @@ int main(){
 
     for (i = 0; i < n; i++){
         scanf(" %c", &c);
-        sum = 0;
-        if((c - '0') >= 0 && (c - '0') <= 9){
-            Push(&st, (c - '0'));
-        }
-        else if(c == '+'){
+        if(c == '+'){
             Pop(&st, &popd1);
             Pop(&st, &popd2);
-            sum = popd1  + popd2;
             Push(&st, popd2);
             Push(&st, popd1);
-            Push(&st, sum);
+            Push(&st, popd1  + popd2);
         }
         else if(c == 'X'){
             Pop(&st, &trash);
         }
         else if (c == 'S'){
-            while(!IsEmpty(st)){
-                Pop(&st, &popd1);
-                sum += popd1;
+            if(!IsEmpty(st)){
+                int sum = 0;
+                while(!IsEmpty(st)){
+                    Pop(&st, &popd1);
+                    sum += popd1;
             }
             Push(&st, sum);
+            }
+            
         }
         else if(c == 'A'){
-            counter = 0;
+            
             if(!IsEmpty(st)){
+                int counter = 0;
+                int sum = 0;
                 while(!IsEmpty(st)){
-                counter++;
-                Pop(&st, &popd1);
-                sum += popd1;
+                    Pop(&st, &popd1);
+                    sum += popd1;
+                    counter++;
             }
-                sum = sum/counter;
+                sum /= counter;
+                Push(&st, sum);
             } 
-            Push(&st, sum);
+        }
+        else {
+            Push(&st, (c - '0'));
         }
     }
-    sum = 0;
+    int result = 0;
     while(!IsEmpty(st)){
         Pop(&st, &popd1);
-        sum += popd1;
+        result += popd1;
     }
 
-    printf("%d\n", sum);
+    printf("%d\n", result);
     return 0;
 }
