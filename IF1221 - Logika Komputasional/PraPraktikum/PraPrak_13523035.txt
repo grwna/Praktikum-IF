@@ -1,0 +1,156 @@
+<=<=<=<=<=<=<=<= Bagian 1 =>=>=>=>=>=>=>=>
+
+Query: 
+a. menikah(aihoshino,X).
+        no
+
+b. findall(Z, (anak(eve,X), anak(X,Y), anak(Y,Z)), Z).
+        Z = [qika,makio]
+
+c. anak(francesco,X), keponakan(X,Y), pria(Y).
+        no
+
+d. findall(X, (menikah(X,Y), menikah(X,Z), Y \= Z, pria(X)), X).
+        X = [qika,qika]
+
+e. saudaratiri(shelby,X), anaksulung(X).
+        X = barok
+
+f. findall(Z, (anak(X,Z), anaksulung(X), anakbungsu(X)), Z).
+        Z = [barok,roxy,ruby,eriq,suzy,francesco]
+
+g. findall(Z, (pria(Z), mertua(X,Z), usia(X,AgeX), AgeX > 99), Z).
+        Z = [eriq]
+
+h. findall(X, 
+   (yatimpiatu(X), usia(X,AgeX),
+   \+ (yatimpiatu(Y), usia(Y,AgeY), AgeX > AgeY) ), 
+   X).
+        X = [francesco]
+
+i. findall(X, 
+   (usia(X,AgeX), AgeX > 60, menikah(X,Y),
+   saudara(Y,Z), saudara(Y,W), Z \= W),
+   X).
+        X = [roxy,roxy]
+
+j. keturunan(qika, X),
+    findall(K, keponakan(K, X), K),
+    length(K, 2).
+        no
+
+
+
+<=<=<=<=<=<=<=<= Bagian 2 =>=>=>=>=>=>=>=>
+exponent(2, 5, X).
+    X = 32
+exponent(2, 3, X).
+    X = 8
+
+growth(100, 10, 5, 0, X).
+    X = 100 
+growth(100, 10, 5, 1, X).
+    X = 95 
+growth(100, 10, 5, 3, X).
+    X = 115 
+growth(100, 15, 15, 3, X).
+    X = 115 
+
+harvestFruits(100,50,1,FinalResult).
+    Si Imut pulang sambil menangis :(
+    FinalResult = 0
+harvestFruits(10,50,5,FinalResult).
+    FinalResult = 35
+harvestFruits(10,1,9,FinalResult).
+    FinalResult = 6
+
+kpk(23, 12, X).
+    X = 276
+kpk(0,0,X).
+    no
+kpk(-8,14,X).                  
+    X = 56
+
+factorial(4,X).                
+    X = 24
+factorial(-1,X).               
+    no
+factorial(12,X). 
+    X = 479001600
+
+makePattern(5).
+        1 1 1 1 1 
+        1 2 2 2 1 
+        1 2 3 2 1 
+        1 2 2 2 1 
+        1 1 1 1 1 
+makePattern(1).
+        1
+makePattern(10).
+        1 1 1 1 1 1 1 1 1 1 
+        1 2 2 2 2 2 2 2 2 1 
+        1 2 3 3 3 3 3 3 2 1 
+        1 2 3 4 4 4 4 3 2 1 
+        1 2 3 4 5 5 4 3 2 1 
+        1 2 3 4 5 5 4 3 2 1 
+        1 2 3 4 4 4 4 3 2 1 
+        1 2 3 3 3 3 3 3 2 1 
+        1 2 2 2 2 2 2 2 2 1 
+        1 1 1 1 1 1 1 1 1 1  
+
+
+<=<=<=<=<=<=<=<= Bagian 3 =>=>=>=>=>=>=>=>
+min([3, 1, 4, 1, 5], Min).
+        Min = 1
+min([10, 20, -9999, 30], Min).
+        Min = -9999  
+
+max([3, 1, 4, 1, 5], Max).
+        Max = 5
+max([10, 20, 5, 30], Max).
+        Max = 30
+
+range([3, 1, 4, 1, 5], Range).
+        Range = 4
+range([10, 20, 5, -30], Range).
+        Range = 50
+
+count([3, 1, 4, 1, 5], Count).
+        Count = 5
+count([], Count).
+        Count = 0
+
+sum([3, 1, 4, 1, 5], Sum).
+        Sum = 14
+sum([10, 20, 5, 30], Sum).
+        Sum = 65
+
+mergeSort([1, 3], [2, 4], Sorted).
+        Sorted = [1, 2, 3, 4]
+mergeSort([5, 8], [1, 6, 7], Sorted).
+        Sorted = [1, 5, 6, 7, 8]
+
+filterArray([10, 15, 20, 25], 12, 5, Result).
+        Result = [15, 20, 25]
+filterArray([3, 8, 12, 20], 10, 2, Result).
+        Result = [12, 20]
+
+reverselist([1, 2, 3, 4], Reversed).
+        Reversed = [4, 3, 2, 1]
+reverselist([6,5,7,1,2,3,5,8], Reversed).
+        Reversed = [8,5,3,2,1,7,5,6]
+
+cekPalindrom([1, 2, 1]).
+        true
+cekPalindrom([1, 2, 3]).
+        false
+
+rotate([1, 2, 3, 4], 2, Result).
+        Result = [3, 4, 1, 2]
+rotate([1, 2, 3, 4], -1, Result).
+        Result = [4, 1, 2, 3]
+
+prosesMahasiswa('Ali', [90, 80, 70, 60], Result).
+        Result = ['Ali', ['A', 'B', 'C', 'C'], 75.0, 'Fail']
+prosesMahasiswa('Sara', [85, 90, 95], Result).
+        Result = ['Sara', ['A', 'A', 'A'], 90.0, 'Pass']
