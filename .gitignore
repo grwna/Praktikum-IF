@@ -3,6 +3,7 @@
 **/main*.c
 **/drive*.c
 **/boolean.h
+**/latihan/
 .zip
 .exe
-
+*.class
